@@ -3,14 +3,14 @@ import { styled } from "@material-ui/core/styles";
 import Grid, { GridProps } from "@material-ui/core/Grid";
 
 interface GameGridProps {
-	disabled?: Boolean;
+	width?: string
 }
 const GameGrid = styled(
-	({ disabled, ...other }: GameGridProps & Omit<GridProps, keyof GameGridProps>) => (
-		<Grid {...other} />
+	({ ...other }: GameGridProps & Omit<GridProps, keyof GameGridProps>) => (
+		<Grid container {...other} />
 	)
 )({
-	cursor: (props: GameGridProps) => (props.disabled ? "default" : "pointer")
+	width: (props: GameGridProps) => (props.width? props.width : '50%')
 });
 
 export default GameGrid;

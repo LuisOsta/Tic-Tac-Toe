@@ -1,5 +1,5 @@
 import React from "react";
-import GameGrid from "./GameGrid";
+import GameCellGrid from "./styled/GameCellGrid";
 
 interface GCProps {
 	cell: number;
@@ -15,11 +15,11 @@ const GameCell: React.FC<GCProps> = ({ cell, index, handleClick }: GCProps) => {
 		}
 	};
 	return (
-		<GameGrid item xs={4} onClick={onClick} disabled={cell !== 0}>
+		<GameCellGrid item xs={4} onClick={onClick} disabled={cell !== 0} position={index}>
 			<h1>
 				{cell}, {index}
 			</h1>
-		</GameGrid>
+		</GameCellGrid>
 	);
 };
 

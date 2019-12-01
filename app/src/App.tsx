@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Grid } from "@material-ui/core";
 import GameCell from "./component/GameCell";
 import "./App.css";
+import GameGrid from "./component/styled/GameGrid";
 
 const initial: Array<number> = new Array<number>(9).fill(0);
 const App: React.FC = () => {
@@ -14,7 +15,7 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<Grid container>
+				<GameGrid>
 					{cells.map((cell, index) => {
 						return (
 							<GameCell
@@ -25,7 +26,7 @@ const App: React.FC = () => {
 							/>
 						);
 					})}
-				</Grid>
+				</GameGrid>
 			</header>
 		</div>
 	);
