@@ -8,7 +8,7 @@ enum Player {
 }
 export interface GameModel {
   cells: Array<number>;
-  player: number;
+  player: Player;
   hasWon: boolean;
   updateGameCells: Action<GameModel, number>;
 }
@@ -16,12 +16,12 @@ export interface GameModel {
 const updateGameCells: Action<GameModel, number> = action((state, payload) => {
   const { cells, player } = state;
   const index = payload;
-  const newCell: number = player;
+  const newCell: Player = player;
   // update the game cells
   const newCells = cells.map((value, i) => (i === index ? newCell : value));
 
   state.cells = newCells;
-  if (hasPlayerWon(newCells, player)) {
+  if (hasPlayerWon(newCells, player, index)) {
     state.hasWon = true;
   } else {
     state.player = getNewPlayer(player);
