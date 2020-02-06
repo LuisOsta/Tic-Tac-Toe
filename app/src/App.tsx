@@ -11,9 +11,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <TurnTracker player={player}></TurnTracker>
+      <TurnTracker player={player}></TurnTracker>
+
         {hasWon === true ? (
-          <h1>The player has won</h1>
+          <h1>Game Over.</h1>
         ) : (
             <GameGrid>
               {cells.map((cell, index) => {
