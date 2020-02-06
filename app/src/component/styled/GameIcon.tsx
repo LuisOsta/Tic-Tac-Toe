@@ -13,7 +13,7 @@ interface GIProps {
 }
 const GameIcon: React.FC<GIProps> = ({cell}: GIProps) => {
     const classes = useStyles()
-    const letter: string = cell === 0 ? "_" : cell === 1  ? "0" : "X";
+    const letter: string = cell === 0 ? "_" : cell === 1  ? "O" : "X";
 	return (
         <span className={classes.icon}>{letter}</span>
     )
